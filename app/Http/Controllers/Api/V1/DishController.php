@@ -6,6 +6,7 @@ use App\Filters\V1\DishFilter;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreDishRequest;
 use App\Http\Requests\UpdateDishRequest;
+use App\Http\Requests\V1\BulkStoreDishRequest;
 use App\Http\Resources\V1\DishCollection;
 use App\Http\Resources\V1\DishResource;
 use App\Models\Dish;
@@ -32,6 +33,14 @@ class DishController extends Controller
     public function store(StoreDishRequest $request)
     {
         //
+    }
+
+    /**
+     * Store newly created resources in storage.
+     */
+    public function bulkStore(BulkStoreDishRequest $request)
+    {
+        Dish::insert($request->all());
     }
 
     /**

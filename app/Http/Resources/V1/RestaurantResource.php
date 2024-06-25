@@ -18,6 +18,7 @@ class RestaurantResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'description' => $this->description,
             'address' => $this->address,
             'phone' => $this->phone,
             'updatedAt' => Carbon::parse($this->updated_at)->format('d/m/Y H:i A'),

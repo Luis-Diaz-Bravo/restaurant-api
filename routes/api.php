@@ -12,4 +12,6 @@ Route::group(
     function () {
         Route::apiResource('dishes', DishController::class);
         Route::apiResource('restaurants', RestaurantController::class);
+
+        Route::post('dishes/bulk', ['uses' => 'DishController@bulkStore']);
     });
